@@ -7,7 +7,7 @@ if(!function_exists('db_create')){
         mysqli_query($GLOBALS['connect'],$sql);
         
 
-    }    
+    }
 }
 
 db_create([]); 
