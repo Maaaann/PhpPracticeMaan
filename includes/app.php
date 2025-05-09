@@ -14,6 +14,6 @@ if(!$connect){
     die("Connection faild ".mysqli_connect_error());
 }
 
-//include __DIR__."/helper.php";
+include __DIR__."/helper.php";
 
 mysqli_close($connect);
