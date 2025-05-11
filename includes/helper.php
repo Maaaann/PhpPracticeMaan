@@ -13,13 +13,16 @@ if(!function_exists('db_create')){
             $columns .= $key.","; 
             $values .=" '".$value."',"; 
         }
+    
         $columns = rtrim($columns,',');
         $values = rtrim($values,',');
-        $sql .= " (".$columns.") VALUES (".$values.")"; 
+        $sql .= " (".$columns.") VALUES (".$values.")";  // the full SQL statment is assembled here
+        $testt = var_dump($sql);
         $query = mysqli_query($GLOBALS['connect'],$sql);
         $id =  mysqli_insert_id($GLOBALS['connect']);
         $first = mysqli_query($GLOBALS['connect'],"select * from ".$table." where id=".$id);
         mysqli_close($GLOBALS['connect']);
+        // data is converted into associative array by fetching it with this funciton
         $data= mysqli_fetch_assoc($first);
         return $data;
     }
