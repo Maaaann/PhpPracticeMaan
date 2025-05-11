@@ -15,4 +15,3 @@ if(!$connect){
 }
 include __DIR__."/helper.php";
 
-mysqli_close($connect);
