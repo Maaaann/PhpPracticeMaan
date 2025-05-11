@@ -1,5 +1,8 @@
 <?php
 
+
+// Inserting data 
+
 if(!function_exists('db_create')){
     function db_create($table,array $data){
         $sql = "INSERT INTO ".$table;
@@ -12,13 +15,18 @@ if(!function_exists('db_create')){
         }
         $columns = rtrim($columns,',');
         $values = rtrim($values,',');
-        echo $values;
+        $sql .= " (".$columns.") VALUES (".$values.")"; 
+        $query = mysqli_query($GLOBALS['connect'],$sql);
+        return mysqli_insert_id($GLOBALS['connect']);
 
 
-        mysqli_query($GLOBALS['connect'],$sql);
-        
 
     }
 }
 
-db_create('users',['name'=>'value', 'email'=>'t@yahoo']); 
+echo db_create('users',[
+    'name'=>'testdone',
+    'email'=>'doene@yahoo',
+    'password'=>'dandon'
+]); 
+
