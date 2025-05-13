@@ -13,8 +13,11 @@ require_once __DIR__."/includes/app.php";
 // ]); 
 
 
-db_update('users',[
-    'name'=> "tayeeeb",
-    'email'=> "testets@gmail.com",
-    'password'=>'dasaffaadndon'
-],4);
+// db_update('users',[
+//     'name'=> "tayeeeb",
+//     'email'=> "testets@gmail.com",
+//     'password'=>'dasaffaadndon'
+// ],4);
+
+
+// db_delete('users',5)

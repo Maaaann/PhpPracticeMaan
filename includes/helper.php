@@ -57,10 +57,9 @@ if (! function_exists('db_update')){
 
 if(!function_exists('db_delete')){
     function db_delete(string $table, int $id){
-        $sql =  "DELETE FROM " . $table . " WHERE id = " . $id;
-        mysqli_query($GLOBALS['connect'],$sql);
+        $query = mysqli_query($GLOBALS['connect'],"DELETE FROM " . $table . " WHERE id = " . $id);
         mysqli_close($GLOBALS['connect']);
+        return $query;
     }
 }
 
-db_delete('users',5);
