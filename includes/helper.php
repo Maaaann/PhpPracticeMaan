@@ -2,7 +2,7 @@
 
 
 //---------------Inserting Data-------------//
-
+// INSERT INTO users (name,email,password) VALUES ('John','man@gmail.com','123456') 
 if(!function_exists('db_create')){
     function db_create($table,array $data):array{
         $sql = "INSERT INTO ".$table;
