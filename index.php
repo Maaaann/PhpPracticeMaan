@@ -11,3 +11,10 @@ require_once __DIR__."/includes/app.php";
 //     'email'=>'fgf@yahoo',
 //     'password'=>'dasaffaadndon'
 // ]); 
+
+
+db_update('users',[
+    'name'=> "tayeeeb",
+    'email'=> "testets@gmail.com",
+    'password'=>'dasaffaadndon'
+],4);
