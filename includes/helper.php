@@ -53,7 +53,7 @@ if (! function_exists('db_update')){
 
 
 //---------------Deleting Data Query-------------//
-//DELETE FROM table_name WHERE id=
+//DELETE FROM table_name WHERE id= $id
 
 if(!function_exists('db_delete')){
     function db_delete(string $table, int $id){
