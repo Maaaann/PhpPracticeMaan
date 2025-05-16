@@ -75,4 +75,3 @@ if(!function_exists('db_show')){
     }
 }
 
-var_dump(db_show('users',55));

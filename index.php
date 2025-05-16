@@ -20,4 +20,7 @@ require_once __DIR__."/includes/app.php";
 // ],4);
 
 
-// db_delete('users',5)
+// db_delete('users',5);
+
+
+// db_show('users',1);
