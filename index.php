@@ -26,3 +26,18 @@ require_once __DIR__."/includes/app.php";
 // db_find('users',1);
 
 // db_find_by_query('users', 'where email=""');
+
+
+$users = db_get('users',"where email LIKE '%g%'");
+if($users['num']> 0 ){
+    while($row = mysqli_fetch_assoc($users['query'])){
+        echo $row['email']."<br>";
+    }
+
+}
+
+if (!empty($GLOBALS['query'])){
+    mysqli_free_result($GLOBALS['query']);
+
+}
+mysqli_close($connect);
