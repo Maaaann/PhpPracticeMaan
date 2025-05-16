@@ -63,3 +63,16 @@ if(!function_exists('db_delete')){
     }
 }
 
+//---------------Find Data Query-------------//
+//SELECT * FROM table_name WHERE id= $id
+
+if(!function_exists('db_show')){
+    function db_show(string $table, int $id){
+        $query = mysqli_query($GLOBALS['connect'],"SELECT * FROM " . $table . " WHERE id = " . $id);
+        $result = mysqli_fetch_assoc($query);
+        mysqli_close($GLOBALS['connect']);
+        return $result;
+    }
+}
+
+var_dump(db_show('users',55));
