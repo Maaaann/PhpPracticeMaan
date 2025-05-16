@@ -63,11 +63,11 @@ if(!function_exists('db_delete')){
     }
 }
 
-//---------------Find Data Query-------------//
+//---------------Find Data-------------//
 //SELECT * FROM table_name WHERE id= $id
 
-if(!function_exists('db_show')){
-    function db_show(string $table, int $id){
+if(!function_exists('db_find')){
+    function db_find(string $table, int $id){
         $query = mysqli_query($GLOBALS['connect'],"SELECT * FROM " . $table . " WHERE id = " . $id);
         $result = mysqli_fetch_assoc($query);
         mysqli_close($GLOBALS['connect']);
@@ -75,3 +75,14 @@ if(!function_exists('db_show')){
     }
 }
 
+//---------------Find Data By Query-------------//
+// SELECT * FROM {table} {query_str}
+
+if(!function_exists('db_find_by_query')){
+    function db_find_by_query(string $table,string $query_str){
+        $query = mysqli_query($GLOBALS['connect'],"SELECT * FROM " . $table ." ".$query_str);
+        $result = mysqli_fetch_assoc($query);
+        mysqli_close($GLOBALS['connect']);
+        return $result;
+    }
+}

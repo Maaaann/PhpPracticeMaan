@@ -23,4 +23,6 @@ require_once __DIR__."/includes/app.php";
 // db_delete('users',5);
 
 
-// db_show('users',1);
+// db_find('users',1);
+
+// db_find_by_query('users', 'where email=""');
